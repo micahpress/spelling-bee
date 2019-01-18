@@ -17,11 +17,11 @@ def find_words(sample_dict, letters, key_let):
                     break
             
             if contains_key and i is len(word):
-                print (word)
+                # print (word)
+                pass
 
 def main():
-    path_to_dict = "./ospd4.txt"
-    path_to_dict = os.fspath(path_to_dict)
+    path_to_dict = "../dictionaries/master-sorted.txt"
 
     letters = ['f', 'e', 'l', 'i', 'c', 't', 'y']
     letters.sort()

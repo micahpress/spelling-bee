@@ -48,7 +48,7 @@ def main():
     if path_to_dict is not '':
         path_to_dict = os.fspath(path_to_dict)
     else: 
-        path_to_dict = os.fspath("dictionaries/combo-plus.txt")
+        path_to_dict = os.fspath("./dictionaries/master-sorted.txt")
 
     root = Node("", False)
 

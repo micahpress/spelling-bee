@@ -37,15 +37,15 @@ class Node:
         if key_let in self.word:
             if self.terminal:
                 if self.size >= min_len and self.size < max_len:
-                    print (self.word)
+                    # print (self.word)
+                    pass
         if self.size < max_len:
             for letter in let_set:
                 if letter in self.children:
                     self.children.get(letter).find_words(min_len, max_len, let_set, key_let)
 
 def main():
-    path_to_dict = "dictionaries/combo.txt"
-    path_to_dict = os.fspath(path_to_dict)
+    path_to_dict = "../dictionaries/master-sorted.txt"
 
     root = Node("", False)
 
@@ -55,9 +55,9 @@ def main():
             root.insert(word)
 
     length = 20
-    letters = ['c', 'a', 'n', 'b', 'o', 'l', 'r']
+    letters = ['f', 'e', 'l', 'i', 'c', 't', 'y']
     letters.sort()
-    key_let = 'n'
+    key_let = 'f'
 
     root.find_words(4, length, letters, key_let)
 
