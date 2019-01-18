@@ -30,20 +30,18 @@ def main():
             i = 0
             contains_key = False
 
-            if not word.isalpha():
-                break
-
-            if len(word) >= 4:
-                while i < len(word):
-                    if word[i] in letters:
-                        if word[i] is key_let:
-                            contains_key = True
-                        i = i + 1
-                    else:
-                        break
-                
-                if contains_key and i is len(word):
-                    print (word)
+            if word.isalpha():
+                if len(word) >= 4:
+                    while i < len(word):
+                        if word[i] in letters:
+                            if word[i] is key_let:
+                                contains_key = True
+                            i = i + 1
+                        else:
+                            break
+                    
+                    if contains_key and i is len(word):
+                        print (word)
 
 if __name__ == "__main__":
     main()
