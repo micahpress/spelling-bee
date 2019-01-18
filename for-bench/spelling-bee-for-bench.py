@@ -1,5 +1,9 @@
 import os
 
+# This file is largely the same as the trie version of the program in the
+# root folder. I'm not going to recomment it here, but I explain my changes
+# to the main method down below.
+
 class Node:
     def __init__(self, word, is_terminal):
         self.word = word
@@ -37,13 +41,15 @@ class Node:
         if key_let in self.word:
             if self.terminal:
                 if self.size >= min_len and self.size < max_len:
-                    # print (self.word)
                     pass
         if self.size < max_len:
             for letter in let_set:
                 if letter in self.children:
                     self.children.get(letter).find_words(min_len, max_len, let_set, key_let)
 
+# I hard-coded in the path to the dictionary and the set of letters to use so that the
+# profiler script can run this through the command-line without needing user input. It works
+# the same way as the trie implementation of the program.
 def main():
     path_to_dict = "../dictionaries/master-sorted.txt"
 
@@ -52,7 +58,9 @@ def main():
     with open(path_to_dict) as sample_dict:
         for word in sample_dict:
             word = word[:len(word) - 1]
-            root.insert(word)
+            if word.isalpha():
+                word = word.lower()
+                root.insert(word)
 
     length = 20
     letters = ['f', 'e', 'l', 'i', 'c', 't', 'y']
